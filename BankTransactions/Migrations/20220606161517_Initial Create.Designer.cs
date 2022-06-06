@@ -12,14 +12,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BankTransactions.Migrations
 {
     [DbContext(typeof(TransactionDbContext))]
-    [Migration("20220606095308_Initial Create")]
+    [Migration("20220606161517_Initial Create")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.2")
+                .HasAnnotation("ProductVersion", "6.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -32,12 +32,12 @@ namespace BankTransactions.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TransactionId"), 1L, 1);
 
-                    b.Property<int>("Account")
-                        .HasColumnType("int");
-
                     b.Property<string>("AccountNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(12)");
+
+                    b.Property<int>("Ammount")
+                        .HasColumnType("int");
 
                     b.Property<string>("BankName")
                         .IsRequired()

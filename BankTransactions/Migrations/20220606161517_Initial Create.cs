@@ -19,7 +19,7 @@ namespace BankTransactions.Migrations
                     BeneficiaryName = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     BankName = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     SWIFTCode = table.Column<string>(type: "nvarchar(11)", nullable: false),
-                    Account = table.Column<int>(type: "int", nullable: false),
+                    Ammount = table.Column<int>(type: "int", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
