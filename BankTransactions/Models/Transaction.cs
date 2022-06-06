@@ -10,8 +10,9 @@ namespace BankTransactions.Models
         public int TransactionId { get; set; }
 
         [Column(TypeName ="nvarchar(12)")]
-        [DisplayName("Ammount Number")]
+        [DisplayName("Account Number")]
         [Required]
+        [MaxLength(12,ErrorMessage ="Maximum 12 charactors only")]
         public string AccountNumber { get; set; }
 
         [Column(TypeName = "nvarchar(100)")]
@@ -27,6 +28,7 @@ namespace BankTransactions.Models
         [Column(TypeName = "nvarchar(11)")]
         [DisplayName("SWIFT Code")]
         [Required]
+        [MaxLength(11, ErrorMessage = "Maximum 11 charactors only")]
         public string SWIFTCode { get; set; }
 
         [Required]
